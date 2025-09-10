@@ -75,6 +75,7 @@ Route::middleware('auth:sanctum')->group(function () {
 
 // reviews product
 Route::middleware('auth:sanctum')->group(callback: function () {
+    Route::get('/reviews', [RviewController::class, 'index']);
     Route::get('/reviews/{ReviewId}', [RviewController::class, 'show']);
     Route::post('/reviews', [RviewController::class, 'store']);
     Route::put('/reviews/{ReviewId}', [RviewController::class, 'update']);

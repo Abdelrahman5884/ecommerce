@@ -11,6 +11,11 @@ use App\Models\Product;
 
 class RviewController extends Controller
 {
+    public function index()
+    {
+        $review = Review::all();
+        return response()->json(['status' => 200, 'data' => $review]);
+    }
     public function show($ReviewId)
     {
         $review = Review::find($ReviewId);

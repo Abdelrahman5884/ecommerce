@@ -11,12 +11,13 @@ use App\Models\Product;
 class ProductController extends Controller
 {
     // show all product by anyone
+    // for you company
     public function index()
     {
         $products = ProductResource::collection(Product::all());
         return response()->json(['status' => true, 'data' => $products]);
     }
-    
+
     public function show($id)
     {
         if (Product::find($id) == null){
