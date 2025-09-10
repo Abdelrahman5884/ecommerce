@@ -11,6 +11,7 @@ use App\Models\Product;
 class ProductController extends Controller
 {
     // show all product by anyone
+    // for you company
     public function index()
     {
         $products = ProductResource::collection(Product::all());
