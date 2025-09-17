@@ -33,7 +33,6 @@ class RviewController extends Controller
         ]);
 
         $product = Product::findOrFail($request->product_id);
-
         $existingReview = Review::where('user_id', Auth::id())
             ->where('product_id', $product->id)
             ->first();
